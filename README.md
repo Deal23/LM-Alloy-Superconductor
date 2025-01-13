@@ -22,7 +22,9 @@ The data and the codes can be used under the condition that you cite the followi
 ```
 
 # Data for Model
-The dataset ```20240322_MDR_OAndM.csv``` in ```LM-Alloy-Superconductor/Data``` is obtained from:  
+Data for Model is stored in ```LM-Alloy-Superconductor/Data```    
+
+The dataset ```20240322_MDR_OAndM.csv```  is obtained from:  
   ```
   1. https://doi.org/10.48505/nims.3739
   2. Science and Technology of Advanced Materials 2015, 16 (3), 033503.
@@ -31,6 +33,8 @@ The dataset ```20240322_MDR_OAndM.csv``` in ```LM-Alloy-Superconductor/Data``` i
 
 The dataset  ```mdr_clean.csv``` is obtained from data in ```20240322_MDR_OAndM.csv``` whose Type contain "Availabel".
 
+The file ```alloy_element.csv``` contains the symbols of the elements that have appeared in ```mdr_clean.csv```, 
+which are divided according to metal and non-metal
 
 
 # Code for Model
