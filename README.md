@@ -41,13 +41,11 @@ Data for Model is stored in ```LM-Alloy-Superconductor/Data```
   2. Science and Technology of Advanced Materials 2015, 16 (3), 033503.
   3. Phys. Rev. B 2021, 103 (1), 014509.
 ```  
-
-(2) The dataset  ```mdr_clean.csv``` is obtained from preprocessing data in ```20240322_MDR_OAndM.csv``` whose Type contain "Availabel".
-
-(3) The file ```alloy_element.csv``` contains the symbols of the elements that have appeared in ```mdr_clean.csv```, 
-which are divided according to metal and non-metal
-
-(4) The file ```数据清洗.txt``` contains records of data preprocessing.
+(2) The dataset  ```mdr.csv``` is obtained in ```20240322_MDR_OAndM.csv``` whose Type contain "Availabel".    
+(3) The dataset  ```mdr_clean.csv``` is preprocessed from mdr.csv    
+(4) The file ```alloy_element.csv``` contains the symbols of the elements that have appeared in ```mdr_clean.csv```, 
+which are divided according to metal and non-metal.    
+(5) The file ```数据清洗.txt``` contains records of data preprocessing.
 
 
 # Code for Model
