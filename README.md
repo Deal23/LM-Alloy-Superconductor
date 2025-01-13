@@ -33,7 +33,7 @@ The data and the codes can be used under the condition that you cite the followi
 ```
 
 # Data for Model
-Data for Model is stored in ```LM-Alloy-Superconductor/Data```    
+Data for Model is stored in ```LM-Alloy-Superconductor/Data```.    
 
 (1) The dataset ```20240322_MDR_OAndM.csv```  is obtained from:  
   ```
@@ -42,10 +42,10 @@ Data for Model is stored in ```LM-Alloy-Superconductor/Data```
   3. Phys. Rev. B 2021, 103 (1), 014509.
 ```  
 (2) The dataset  ```mdr.csv``` is obtained in ```20240322_MDR_OAndM.csv``` whose Type contain "Availabel".    
-(3) The dataset  ```mdr_clean.csv``` is preprocessed from mdr.csv    
-(4) The file ```alloy_element.csv``` contains the symbols of the elements that have appeared in ```mdr_clean.csv```, 
-which are divided according to metal and non-metal.    
-(5) The file ```数据清洗.txt``` contains records of data preprocessing.
+(3) The dataset  ```mdr_clean.csv``` is preprocessed from mdr.csv.    
+(4) The file ```alloy_element.csv``` contains the symbols of the elements that have appeared in ```mdr_clean.csv```, which are divided according to metal and non-metal.    
+(5) The file ```数据清洗.txt``` contains records of data preprocessing.    
+(6) The file ```mdr_duplicated.csv``` contains part of formulas in ```mdr_clean.csv``` with mutiple T<sub>c</sub>.
 
 
 # Code for Model
