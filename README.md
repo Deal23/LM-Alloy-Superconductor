@@ -1,4 +1,15 @@
 # LM-Alloy-Superconductor
+<center>
+Chen Hua<sup>a,b</sup>, Jing Liu<sup>a,b,c</sup>*
+</center>    
+
+<sup>a)</sup>Key Lab of Cryogenic Science and Technology, Technical Institute of Physics and Chemistry, Chinese Academy of Sciences, Beijing 100190, China.    
+<sup>b)</sup>School of Future Technology, University of Chinese Academy of Sciences, Beijing 100049, China.    
+<sup>c)</sup>School of Biomedical Engineering, Tsinghua University, Beijing 100084, China.    
+*Correspondence: jliu@mail.ipc.ac.cn    
+Author email: h_uachen@163.com
+
+
 # Introduction
 
 # Condition
@@ -40,4 +51,4 @@ which are divided according to metal and non-metal
 
 
 # Code for Model
-
+The code can be provided upon request from the author(s).
