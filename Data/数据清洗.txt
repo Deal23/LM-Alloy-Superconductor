@@ -1,0 +1,46 @@
+https://mdr.nims.go.jp/concern/datasets/m900p111d?locale=en
+1.分子式转变温度问题：33465-7107=26358
+	筛选推荐转变温度空值，删除
+		
+2.分子式含有未知数/下标缺失：26358-3243-2113=21002
+	筛选包含-和+，删除（3243）
+	筛选结尾是x,y,z,X,Y,Z（2113）
+		
+3.不可靠数据：21002-6-42 = 20950
+（1）Physica C: Superconductivity 2001, 351 (1), 78–81.。Pb2C1Ag2O6。310K？未证实
+（2）Nature, 244(2023)244。294K，Lu1H。撤稿
+（3）Nature, 586(2020)373。C1S1，288K。撤稿
+（4）uperconductivity found in meteorites，Mg1C1Na1Sn1Ca1Al1Si1Ni1In1Pb1。没有十元合金
+（5）Physica C.,246(1995)207-215。Hg0.66Pb0.34Ba2Ca1.98Cu2.9O8.4。143K是抗磁温度
+（6）AIP Advances, 11(2021)015007，Y1Ba2Cu3La0.67Sr0.33Mn1O3OO7。元素错误
+无出处：42
+		
+4.高压超导体：20996-6=20947
+（1）Nature 569(2019)528。La1H10，250K。高压
+（2）Nature 525, 73 (2015))。H2S1，203K/155GPa 。高压
+（3）cond-mat/1412.0460。H2S1，185K/143GPa。高压
+（4，5）Physica C, 552(2018)27。D3S1：148K。H3S1：147K。高压*2
+（6）Nature 2015, 525 (7567), 73–76.。H2S1。135K/200GPa。高压
+
+5.修正
+（1，2）Physica B, 281(2000)909。Gd0.6Pr0.4Ba2Cu3O6.6，Gd0.7Pr0.3Ba2Cu3O6.5改为Y0.6Pr0.4Ba2Cu3O6.6,Y0.7Pr0.3Ba2Cu3O6.5。元素错误
+（3，4）Phys.Rev.B,60(1999)10489。Y1Ba2Cu3O6.1。90K，92K需要Br恢复。改为0K
+（5，6）Phys.Rev.B, 98(2018)014518，Cs1Eu1Fe4As4。287K→28.7K。录入错误
+
+5.非法元素符号：20947-12-327=20608
+筛选发现
+Ah：1
+Bf：1
+Ct：3
+M、D、T：327
+Dc：1
+Gs：1
+Jr:1
+Ls:1
+Pf:1
+Ph:1
+Rr:1
+
+
+
+
