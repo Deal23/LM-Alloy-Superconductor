@@ -1,0 +1,18 @@
+# Data File Inventory
+
+| File | Description |
+| --- | --- |
+| `20240322_MDR_OAndM.csv` | Original source dataset downloaded from the MDR database. |
+| `mdr.csv` | Cleaned dataset before weight-percent to atomic-ratio conversion. |
+| `mdr_clean_wt.csv` | Cleaned dataset before weight-percent to atomic-ratio conversion. |
+| `mdr_clean.csv` | Fully cleaned dataset. |
+| `mdr_clean_os2.csv` | Dataset with 2x SMOTE oversampling for non-superconducting records. |
+| `mdr_clean_os5.csv` | Dataset with 5x SMOTE oversampling for non-superconducting records. |
+| `mdr_clean_od2.csv` | Dataset with 2x random-duplication oversampling for non-superconducting records. |
+| `mdr_clean_od5.csv` | Dataset with 5x random-duplication oversampling for non-superconducting records. |
+| `mdr_duplicated.csv` | Subset of cleaned formulas with multiple reported `Tc` values. |
+| `alloy_element.csv` | Element table used to identify metallic elements for alloy screening. |
+| `alloy4pre.csv` | Alloy data outside the training set, used for prediction. |
+| `other4pre.csv` | Additional high-temperature-superconductor and non-superconductor data used for prediction. |
+| `Data_clean.ipynb` | Data-processing notebook. |
+| `data_cleaning_record.txt` | Data-cleaning record. |

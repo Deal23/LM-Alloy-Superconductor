@@ -9,8 +9,8 @@ from concurrent.futures import ProcessPoolExecutor
 from datetime import datetime
 
 num_workers = 30
-# 配置文件路径和日志文件名
-# 修改'model_path'以及'feature_names_path'以选择合适的预测模型
+# Configuration for model files and logs.
+# Modify `model_path` and `feature_names_path` to select the prediction model.
 CONFIG = {
     'model_path': '../1_Tree_model_train/2-model/ET.joblib',
     'feature_names_path': '../1_Tree_model_train/2-model/ET_feature.joblib',
@@ -19,14 +19,14 @@ CONFIG = {
     'top_file': '1-3Alloy.csv'
 }
 
-# 确保输出目录存在
+# Ensure that the output directory exists.
 # os.makedirs(CONFIG['output_dir'], exist_ok=True)
 
-# 加载模型和特征名称
+# Load model and feature names.
 model = load(CONFIG['model_path'])
 feature_names = load(CONFIG['feature_names_path'])
 
-# 定义预测函数
+# Prediction function.
 def predict_transition_temp(model, feature_names, elements_ratios):
     feature_row = {element: elements_ratios.get(element, 0) for element in feature_names}
     input_features = pd.DataFrame([feature_row], columns=feature_names)
@@ -37,11 +37,11 @@ def f_pre(formula):
     try:
         return predict_transition_temp(model, feature_names, parse_formula(formula))
     except Exception as e:
-        # 将错误信息记录到日志文件中
+        # Write processing errors to the log file.
         log_message(f"Error processing formula {formula}: {e}")
-        return None  # 或者返回一个默认值，取决于您的业务逻辑
+        return None
 
-# 生成随机化学式
+# Generate random formulas.
 def generate_formulas(elements, num_formulas):
     formulas = []
     while len(formulas) < num_formulas:
@@ -53,9 +53,9 @@ def generate_formulas(elements, num_formulas):
             formulas.append(formula)
     return formulas
 
-# 化学式拆分为字典
+# Parse a chemical formula into an element-ratio dictionary.
 def parse_formula(formula):
-    formula = str(formula)  # 确保formula是字符串
+    formula = str(formula)  # ensure that formula is a string
     elements_ratios = {}
     for element, ratio in re.findall(r'([A-Z][a-z]*)(\d*\.?\d*)', formula):
         if element in elements_ratios:
@@ -64,12 +64,12 @@ def parse_formula(formula):
             elements_ratios[element] = float(ratio) if ratio else 1
     return elements_ratios
 
-# 将消息写入日志文件
+# Write a message to the log file.
 def log_message(message):
     with open(CONFIG['log_file'], "a") as log_file:
         log_file.write(message + "\n")
 
-# 主函数，执行预测
+# Main prediction routine.
 def main(elements, num_formulas):
     file_name = '-'.join(elements)
     file_path = os.path.join(CONFIG['output_dir'], f'{file_name}.csv')
@@ -78,7 +78,7 @@ def main(elements, num_formulas):
     with ProcessPoolExecutor(max_workers=num_workers) as executor:
         results = list(executor.map(f_pre, predict['formula']))
     predict['Predicted_Tc'] = results
-    # 保存top 10结果到top.csv
+    # Append the top 10 predictions to the summary file.
     predict.insert(0, 'elements', file_name)
     top_10 = predict.nlargest(10, 'Predicted_Tc')
     if os.path.exists(CONFIG['top_file']):
@@ -91,10 +91,10 @@ if __name__ == "__main__":
     elements = ['Ga', 'Bi', 'In', 'Sn', 'Zn', 'Ag', 'Sb', 'Cu']
     num_elements = 3
 
-    for r in range(1, num_elements + 1):          #-------------------从一元单质到二元合金到三元合金
+    for r in range(1, num_elements + 1):          # from unary elements to binary and ternary alloys
         for elements_combination in itertools.combinations(elements, r):
             alloy_time = time.time()
-            num_formulas = 1 if r == 1 else 500   #-------------------修改生成样本数量
+            num_formulas = 1 if r == 1 else 500   # adjust the number of generated samples
             main(elements_combination, num_formulas)
             cycle_time = time.time() - alloy_time
             log_message(f"Finished predicting for alloy: {elements_combination};{cycle_time:.2f} seconds")

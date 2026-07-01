@@ -41,8 +41,8 @@ The source dataset is associated with:
 | File | Description |
 | --- | --- |
 | `Data_clean.ipynb` | Notebook used for data cleaning, feature construction, oversampling, and quality checks. |
-| `数据清洗.txt` | Original data-cleaning record. |
-| `数据说明.txt` | Original Chinese data-description note. |
+| `data_cleaning_record.txt` | Data-cleaning record translated and formatted in English. |
+| `data_inventory_original.txt` | File-level data inventory translated and formatted in English. |
 
 ## Notes
 
