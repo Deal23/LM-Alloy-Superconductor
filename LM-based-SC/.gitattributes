@@ -1,0 +1,11 @@
+*.csv text eol=lf
+# Frozen source bytes are part of the research provenance (includes CRLF).
+data/source.csv -text whitespace=cr-at-eol
+*.txt text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.cff text eol=lf
+*.ipynb text eol=lf
+*.png binary
+*.svg text eol=lf

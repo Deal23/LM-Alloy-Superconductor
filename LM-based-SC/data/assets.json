@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "data/source.csv",
+      "bytes": 465394,
+      "sha256": "5d4751e7764729a93b2a1df912b3ed78b564d8db1e67aaa2915a79de94a65230",
+      "tracked": true
+    },
+    {
+      "path": "data/superconductors.csv",
+      "bytes": 4479407,
+      "sha256": "7ea2fede6f0b3e633f5d388ef35a4bf7ff326898ea670cf58e1271a3b7e076fb",
+      "tracked": true
+    },
+    {
+      "path": "models/feature_columns.json",
+      "bytes": 638,
+      "sha256": "819a4f9d62853ff9d89e40d9824d3c3d60ca45f680732e3be0a3e2331cdcf92d",
+      "tracked": true
+    }
+  ]
+}

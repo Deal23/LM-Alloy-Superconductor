@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If this repository is helpful for your research, please cite the associated article."
+title: "LM-Alloy-Superconductor"
+authors:
+  - family-names: Hua
+    given-names: Chen
+  - family-names: Liu
+    given-names: Jing
+doi: 10.1007/s10853-025-11121-z
+url: "https://github.com/Deal23/LM-Alloy-Superconductor"
+preferred-citation:
+  type: article
+  title: "Tree model machine learning to identify liquid metal-based alloy superconductor"
+  authors:
+    - family-names: Hua
+      given-names: Chen
+    - family-names: Liu
+      given-names: Jing
+  journal: "Journal of Materials Science"
+  volume: 60
+  issue: 28
+  start: 11857
+  end: 11877
+  year: 2025
+  doi: 10.1007/s10853-025-11121-z
+  url: "https://doi.org/10.1007/s10853-025-11121-z"

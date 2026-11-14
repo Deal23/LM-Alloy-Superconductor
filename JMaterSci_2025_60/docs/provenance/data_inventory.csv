@@ -1,0 +1,16 @@
+path,rows,columns,encoding,bytes,sha256
+data/augmented/mdr_clean_od2.csv,21452,formula; Tc,utf-8-sig,424376,d4ad5aef4c4c79ed04e5bfdee01972fe8cf896097de7310dc6dc19bf103fc8ea
+data/augmented/mdr_clean_od5.csv,22823,formula; Tc,utf-8-sig,442766,d3cf43675b747db64a709bf411ade43f0987861e78d4ccbe93381cc593856dc8
+data/augmented/mdr_clean_os2.csv,21452,formula; Tc; type,utf-8-sig,711506,e0a13e396526f090bbd0127819ff0f41721a378acd25fe6b5be48441a6df1d0a
+data/augmented/mdr_clean_os5.csv,22823,formula; Tc; type,utf-8-sig,761987,61e32027eafb2f15be6e6fccd77ae2a62421a9d6dad1ad8856135e2ff449bc81
+data/inputs/alloy_prediction.csv,3,formula; alloy; Tc,utf-8-sig,151,83986527fef75c88642143f8e423709afa0bf3ba0673d7f706332b4cb814e7a3
+data/inputs/alloy_element.csv,81,Element; type,utf-8-sig,683,9a6f1c13b6ac554d739fd7325bb0f15667f45bab70d4de3cdd830ca7e9e9b7d5
+data/inputs/example_prediction.csv,3,formula; alloy; Tc,utf-8-sig,151,83986527fef75c88642143f8e423709afa0bf3ba0673d7f706332b4cb814e7a3
+data/inputs/ga_prediction_sample.csv,4,formula; Tc; ET_element,utf-8-sig,134,c3a82458b4e3c78b5c03c32329cace85438daea2c84bcaf46fd8d1ca76b1f413
+data/inputs/other_prediction.csv,14,formula; Tc,utf-8-sig,216,cf361991f0b46644f5ba4f4ec60ddc0ecedc6d8e51d8789c5c0632a73b5a77c2
+data/non-superconductors/non.csv,386,data number; formula; publication; space group; Tc; title of reference; journal; author; Type,utf-8-sig,53562,521e75732de25464808297a14a04e961f6712aa2c6bf1410acf51cfd3a68384d
+data/non-superconductors/konno_2021_training_removed.csv,257,matter;  Tc,utf-8-sig,4115,a58ea9f50bfb350fd123545e70d37d5ce07ddae223b7ce9fd80f6722626190e4
+data/processed/mdr_clean.csv,20995,formula; Tc,utf-8-sig,465394,5d4751e7764729a93b2a1df912b3ed78b564d8db1e67aaa2915a79de94a65230
+data/processed/mdr_duplicated.csv,599,formula; Tc,utf-8-sig,9315,d805874d3966c4c38149b03dcff780c5e9847793487b969e936a4b7d8f16cc1c
+data/source/20240322_mdr_oandm.csv,33851,data number; formula; publication; space group; Tc; title of reference; journal; author; Type,gb18030,7105642,46f341ffcc25c51fcaef33f1482c306e26b149b15f64c2c5b92dc4975bb62a0b
+data/source/mdr.csv,20995,formula; Tc,utf-8-sig,417247,7ed0c1bdde5dba1addfba4e1e1fbd2705a0619f030bfdec79afca137c5855835

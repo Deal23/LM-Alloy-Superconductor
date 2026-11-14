@@ -1,0 +1,387 @@
+data number,formula,publication,space group,Tc,title of reference,journal,author,Type
+,Zr2Ti2Sb2H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr2Ti2Bi2H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Mn1Ru1As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Mn1Bi2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Co2Si2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Gd1Co2B2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y3Ni1Si3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Ni0.75As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cu2As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Cu2As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf1Cu2P2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Zn1Bi2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Rh1B1N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Nb1Ge1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ce2O2Sb1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zn1B2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Sr1Si4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Rh2Ge4S6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cr2Hf1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sm1Ni1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Os1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Cr2O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr2N2S1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn2Cr1N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Rh1N1Cr3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Zn1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Co1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Cr1O2H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Mo1O2.5N0.5,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn1O2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Sc1O2H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Si1O3H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Cr2O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ce1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,K1Os1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Bi2Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La3Hf1Bi5,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Pd1Si1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Fe1As1H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Fe0.5Sb2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Ti1Bi1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Ti1Sb1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Cr1As1O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ce1Cr1As1O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Pr1Cr1As1O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sm1Cr1As1O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Nd1Cr1As1O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Mn1Bi2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Mn1Fe1As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Mn2Si2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Co2Ge2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Ni1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,K1Ni2Se2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba2Cu3P4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Gd1Cu1.25P1.75,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ta1Ge1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Ag1Bi2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ce1Ag1Bi2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Gd2O2Bi1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Au1P1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ta5Si3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Ni1Si3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Rh2Ge4Se6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cr1Ta1N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Os1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Sr1Mn1O3H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Ti1O3F2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf2N2S1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn3Zn1N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr3Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba2Y1Sc1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Bi1S3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Cr1O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y1Ca1Cr1O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Na32Si136,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Pt1Sb2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ti3O4.9N0.1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Na1Ti2O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Lu1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Cu3Ru4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca3Li1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Pb2Os2O7,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La3Ti1Bi5,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Ti1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Cr1As1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Mn1As1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mg1Ni1Ge1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La3Ni1Si3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Cu6As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Cu2P2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf1Cu1Si2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2F2Ti2Bi2O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,P1Ca10Ir4As10Fe10,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Eu1Cr1As1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Mn1As1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Mn2As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y1Co2Ge2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Co2Ge2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Cu6P5,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y1Cu1Sb2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Cu2As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf1Cu1Ge2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Ir1B1N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Ni1Sn3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ce2O2Bi1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Er2O2Bi1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Au1Si1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,V5Ge3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ta5Ir3O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Ir2Ge4S6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cr2N1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Os1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Li1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ti4O6.99N0.01,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Eu1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cd1Rh2O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Os2O7,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Pb2Ir2O7,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Fe1Si1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf1Co2Si2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ti1Si1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mg2Pt1Si1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,V5P3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Yb1Ga0.9Si1.1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ti1O1Cl1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr2N2O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn3Al1C1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca3Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Y1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr1Ge1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ti3N4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Na1Cr2O4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La3Ti1Sb5,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Eu1Mn1As1F1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La1Co0.6Sb2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Cu1.8As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y1Cu1As2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Cu1Si1As1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,La2O2Te1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba1Ir2Ge4Se6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cu1N1C1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Ru1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca1Rh1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Mn1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ir1Sb2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Y1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Bi1Cu3Cr4O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca5Os2O12,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr2Ti2As2H1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Hf1Co2Ge2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn1B2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cr1O1Cl1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mn3Sn1C1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Mn1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr2Pb1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr3N4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Cr3O1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr1Ni0.75P1,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca3Cr2O7,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ba3C60,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Zr5Pb4,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ca2Fe1Os1O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Na1Ir1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Ge1O2,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Sr3Co2O6,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Li1Os1O3,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Rh3Ge7,2021,,0,Deep learning model for finding new superconductors,Phys. Rev. B,Konno,Available_0
+,Mg1Fe1As1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Fe1As1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Eu1Fe1As1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1Fe1P1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe1P1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Fe1O1Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe1O1Se1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Fe1O1Se1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,K1Fe1Se1F1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1Fe1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Fe2Sb2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Fe2Se2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1Fe1Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1Fe2B2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1Fe2As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cd1Fe2As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1Fe2B2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca10Pt5.8Fe8.2Sb18,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba2In1O3Fe1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2In1O3Fe1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Fe1O1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Fe1O3As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr4V2O5Fe2As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi2Sr1Fe2O4Se2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3O2Fe4As4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3F2Fe4As4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ag1Fe1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe4As3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe3Ag1As3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe3Cu1As3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Fe3Li1As3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3O4Fe4As3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3O4Fe4As5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Fe2Cu2Se2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2.6K0.4Fe2Cu2Se2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3O4Fe4As4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3Fe4As4F3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Na1Fe2O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Fe2Se2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ti2As2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Eu1Ti2As2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Ti2Sb2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1V2Ge2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1V2Sn2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Mn2As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Mn2Sb2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mn1Co1As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mn1Rh1As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mn1Ir1As2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La2O1Mn2Te2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mn2Se2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1Co2Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Ni1As1H1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1Ni2Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Rh1Ni1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cu2Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1Cu1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ce1Cu1P1O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi1O1Cu1S1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3Ru2B2N3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ru1B1N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ga2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Ga2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La2O2Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ce1Ag1Sb2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Pr2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Nd2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sm2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Eu2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Yb2O2Bi1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La5Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pd1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pt1Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Pt1Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1Pt1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Pt1Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1Ag1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Co1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ni1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Cu1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pd1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ag1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ir1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Au1Sn1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pt1Sn1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Au1Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Au1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,V56P3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,V5As3N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Nb5Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr5Pb3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Li1Mg4Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Na1Mg4Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Mg4Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mg4Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1Mg4Si3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Ge3Mg4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cr1B2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Cu1Si1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Lu2Al1Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba3Ga0.7Si4.3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Fe4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Co4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ni4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ru4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Rh4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Pd4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ir4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Pt4Bi12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Nb1Cr1N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ti1N1F1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ti2Sb1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr2Sb1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cr2Ti1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cr2Zr1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ni1Te2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Na1Ni1F3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1As1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3Ni2O7,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi2W1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Fe1O1C1I1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,V1O1Cl1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ti2N2S1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ti2N2O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cs1La1Te2O5Cl1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mn3Al1N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Al1Ni3C1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3Si1O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3Sn1O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca2Pb1O1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ag3P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Ir3P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Au3P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg2C1Ni4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca4O1Sb2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca2Co1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Zn1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Fe1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Co1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Ni1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Dy1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr4Fe1Mo1O8,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Mo1O2.5Na0.5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Nb1O2N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ba1Mn2O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1Ba1Mn2O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi2Y1Cu2O4Se2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Cr1O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi2Sr1Cu2O4Se2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Cr1O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Fe1Ni1Cu2Se2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1La2Cu4Se2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Cr207,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Ni2Cu2Se205,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3Cr207,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Cu4Se2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Sr1Ti1O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca3Ni12B6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Ni12B6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,K1C24,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg2C60,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1C2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1C2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Y1C2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Hf3N4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,N1Cr1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sc4Ti3O12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1V2O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Li1V2O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ca1Cr2O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Cu1Cr4O12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Cu3Cr4O12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ag2Mn1O2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Li1Mn2O4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Nb1O3N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La1Ru2O10,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi3Ru3O11,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr3Ru2O7C12,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr2Ru1O7F2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Sb1O3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cs1W2O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1W1O2N1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba2Os1O5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Bi1Os1O6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ag2Bi1O3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,K1Mo3S3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pt3S1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Pt3S1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,In1V6Se8,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sn1Te1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Co1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ni1P1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Ni2P4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Pd2P4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pt3Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Pt3Sb1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3V1Sb5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3Cr1Sb5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3Mn1Sb5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3V1Bi5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La3Cr1Bi5,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Fe3Al2Si4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1Al2Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg4Al1Si6,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Mg1.3Ga0.7Si1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mg2Si2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ti2Ru3Si4,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Sr1Pd1Si1,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mg2Ge2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mg2Sn2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Ba1Mg2Pb2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Cs1Sn1I3,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,La2Te1I2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0
+,Zr1Mn2,2015,,0,"Exploration of new superconductors and functional materials, and fabrication of superconducting tape",Sci. Technol. Adv. Mater.,Hosono,Available_0

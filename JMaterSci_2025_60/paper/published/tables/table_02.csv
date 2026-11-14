@@ -1,0 +1,22 @@
+Type,Algorithm,Feature ,Feature database,R2,RMSE(K),MAE(K)
+TreeBasedModel,Random forest[18],Elemental properties (145),Magpie,0.885,-,-
+,XGBoost[19],Elemental properties (81),ElementData in Mathematica,0.92,9.5,-
+,Random forest[20],Elemental properties (53),"Materials Project, Pymatgen, Mendeleev",0.92,-,-
+,Bagged tree[21],Composition (-),One-hot formula,0.93,8.91,-
+,XGBoost[22],ec (18),Magpie,0.877,-,5.4
+,,ec+ (23),Magpie,0.913,-,4.5
+,,ec++ (28),Magpie,0.921,-,4.2
+,CatBoost[10],Elemental properties (322),Jabir,0.952,6.5,-
+,Extra-Trees(This work),Composition (-),One-hot formula,0.952 ,6.26,-
+NeuralNetworkModel,CNN+LSTM[23],Atom vector (20),SVD in one-hot formula ,0.899,83.565,5.023
+,,Composition (-),one-hot formula,0.899,83.565,5.023
+,,Elemental properties (-),Magpie,0.899,83.565,5.023
+,CNN[7],Periodic table (4*32*7),"Periodic table, one-hot formula",0.92,-,-
+,CGCNN[24],Crystal graph (-),Materials Project,0.92,-,5.6
+,CNN[25],Elemental properties (81) & Composition (86) & lattice parameter(8),"Pymatgen, Materials Project, one-hot formula",0.9429,-,-
+,DNN[26],Composition (-),One-hot formula,0.95,6.08,3.08
+,,Elemental properties (-),"Magpie, Mendeleev, Villars",0.93,7.35,3.73
+,BNAS[27],Electron band structure (18*32*32*32),DFT calculation,0.918,-,-
+IntegratedModel,CNN+GBDT[28],Elemental properties (22*6),Matminer,0.937,4.653,8.695
+,Deepforest[29],Composition (86),One-hot formula,0.945,5.51,4.04
+,CNN+XGBoost[30],Elemental properties (81) & Composition (86),"ElementData in Mathematica, one-hot formula",0.934,8.7915,-

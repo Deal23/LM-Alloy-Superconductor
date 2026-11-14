@@ -1,0 +1,58 @@
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Python environments, caches and builds
+.venv/
+.update-backups/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Local research assets and scratch outputs
+/models/*.joblib
+/references/papers/*.pdf
+/references/gain_dft/data/*.xyz
+/artifacts/
+*.log
+
+# Credentials
+.env
+*.pem
+*.key
+github_key_*
+
+# Web application local files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+logs/
+results/
+data/uploads/
+ml/models/*.joblib
+ml/models/*_metadata.json
+ml/models/*_metrics.json
+# Generated or reproducible outputs; keep source code and input data tracked.
+results/figures/
+results/predictions/
+results/*.csv
+app/docs/*.pdf
+data/**/*.pdf
+# Historical/intermediate datasets retained locally, but not needed by the app.
+data/20240322_MDR_OAndM.csv
+data/mdr_duplicated.csv
+data/mdr_clean_od5.csv
+data/mdr_clean_os2.csv
+data/mdr_clean_os5.csv
+data/mdr_clean_wt.csv

@@ -1,0 +1,44 @@
+name: Project checks
+on:
+  push:
+  pull_request:
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: JMaterSci_2025_60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r docs/environment/requirements.txt
+      - run: python -m unittest discover -s tests -v
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: WEB-APP
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt pytest
+      - run: python -m pytest -q
+  composition:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: LM-based-SC
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: LM-based-SC/config/requirements.txt
+      - run: pip install -r config/requirements.txt
+      - run: python -m lmsc verify
+      - run: python -m lmsc test -q

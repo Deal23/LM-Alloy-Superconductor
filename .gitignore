@@ -1,0 +1,36 @@
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Python environments, caches and builds
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Local research assets and scratch outputs
+/models/*.joblib
+/references/papers/*.pdf
+/references/gain_dft/data/*.xyz
+/artifacts/
+*.log
+
+# Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+github_key_*

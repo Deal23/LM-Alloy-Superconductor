@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="LMSC 超导材料临界温度预测与可视化分析工作台">
+  <title>LMSC · 超导材料预测</title>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('lmsc-theme') || 'light'; } catch (_) { /* storage is optional */ }</script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=12">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <h1>LMSC</h1>
+          <span>材料发现工作台</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <div class="nav-label">工作台</div>
+        <button type="button" class="nav-item active" data-tab="dashboard" id="nav-dashboard" data-title="概览">
+          <span class="nav-icon">⌂</span> 概览
+        </button>
+        <button type="button" class="nav-item" data-tab="predict" id="nav-predict" data-title="单点预测">
+          <span class="nav-icon">◈</span> 单点预测
+        </button>
+        <button type="button" class="nav-item" data-tab="batch" id="nav-batch" data-title="批量预测">
+          <span class="nav-icon">▤</span> 批量预测
+        </button>
+        <div class="nav-label">研究工具</div>
+        <button type="button" class="nav-item" data-tab="train" id="nav-train" data-title="训练模型">
+          <span class="nav-icon">⚙</span> 训练模型
+        </button>
+        <button type="button" class="nav-item" data-tab="models" id="nav-models" data-title="本地模型">
+          <span class="nav-icon">▦</span> 本地模型
+        </button>
+        <button type="button" class="nav-item" data-tab="workflow" id="nav-workflow" data-title="高通量筛选">
+          <span class="nav-icon">↗</span> 高通量筛选
+        </button>
+        <button type="button" class="nav-item" data-tab="data" id="nav-data" data-title="数据集">
+          <span class="nav-icon">▣</span> 数据集
+        </button>
+        <button type="button" class="nav-item" data-tab="phase" id="nav-phase" data-title="成分相图">
+          <span class="nav-icon">△</span> 成分相图
+        </button>
+        <div class="nav-label">应用 · v{{ app_version }}</div>
+        <button type="button" class="nav-item" id="btn-check-update"><span class="nav-icon">↻</span> 检查更新</button>
+        <button type="button" class="nav-item" id="btn-apply-update" hidden>安装更新</button>
+        <div class="sidebar-update-status" id="update-status" role="status"></div>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span> 本地运行 · TreeModel
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button type="button" class="menu-toggle" id="menu-toggle" aria-label="打开导航菜单">☰</button>
+          <div>
+            <span class="eyebrow">LMSC / WORKSPACE</span>
+            <span class="page-title" id="page-title">概览</span>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">☼</button>
+          <div class="model-pill loading" id="model-pill">
+            <span class="dot"></span>
+            <span>未加载</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Dashboard -->
+        <section class="section active" id="section-dashboard">
+          <div class="hero">
+            <div class="hero-copy">
+              <div class="kicker"><span class="kicker-dot"></span> 材料发现 · 快速工作流</div>
+              <h2>从化学式开始，<br><span>探索超导临界温度。</span></h2>
+              <p>输入化学式，快速预测 Tc 并查看可靠度。</p>
+              <div class="quick-predict" role="search">
+                <input type="text" id="dash-formula" placeholder="例如 MgB2、Nb3Sn" aria-label="首页快速预测化学式">
+                <button class="btn btn-primary" id="btn-dash-predict">开始预测 <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="example-row">
+                <span>试试：</span>
+                <button type="button" class="example-chip" data-formula="MgB2">MgB2</button>
+                <button type="button" class="example-chip" data-formula="Nb3Sn">Nb₃Sn</button>
+                <button type="button" class="example-chip" data-formula="Ba0.5In0.5">Ba₀.₅In₀.₅</button>
+              </div>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="orbit-core"><strong>Tc</strong><span>predict</span></div>
+              <i class="atom atom-one"></i><i class="atom atom-two"></i><i class="atom atom-three"></i>
+            </div>
+          </div>
+          <div class="card-grid">
+            <div class="card stat-card accent-cyan">
+              <div class="stat-icon">◉</div>
+              <h3>当前模型</h3>
+              <div class="value" id="dash-model-name">-</div>
+              <div class="sub" id="dash-model-status">等待加载</div>
+            </div>
+            <div class="card stat-card accent-blue">
+              <div class="stat-icon">R²</div>
+              <h3>R²</h3>
+              <div class="value" id="dash-model-r2">-</div>
+              <div class="sub">决定系数</div>
+            </div>
+            <div class="card stat-card accent-purple">
+              <div class="stat-icon">≈</div>
+              <h3>RMSE</h3>
+              <div class="value" id="dash-model-rmse">-</div>
+              <div class="sub">均方根误差 (K)</div>
+            </div>
+            <div class="card stat-card accent-amber">
+              <div class="stat-icon">#</div>
+              <h3>特征维度</h3>
+              <div class="value" id="dash-model-features">-</div>
+              <div class="sub">元素组成向量</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title"><span>当前模型</span><span class="panel-caption">预测前可随时切换</span></div>
+            <p class="research-note" id="dashboard-dataset-info" style="margin-bottom:14px">默认数据：LM-based-SC · 正在读取</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>选择模型</label>
+                <select id="select-model"></select>
+              </div>
+              <div class="form-group" style="display:flex;align-items:flex-end">
+                <button class="btn btn-primary" id="btn-load-model">加载模型</button>
+              </div>
+            </div>
+            <div class="helper-row" id="dash-model-empty" hidden><span>尚无可用模型。可使用内置数据集训练，无需另外准备文件。</span><button type="button" class="text-button" data-open-tab="train">训练第一个模型 →</button></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title"><span>快速训练</span><span class="panel-caption">使用 LM-based-SC 默认数据</span></div>
+            <div class="form-grid"><div class="form-group"><label for="dash-train-name">模型名称（可选）</label><input id="dash-train-name" type="text" maxlength="80" placeholder="例如：我的 ET 模型"></div><div class="form-group" style="display:flex;align-items:flex-end"><button class="btn btn-primary" id="btn-dash-train" type="button">训练默认 ET 模型</button></div></div>
+            <p class="research-note">Extra-Trees · 300 棵树 <button type="button" class="text-button" data-open-tab="train">自定义训练 →</button></p>
+            <p id="dash-train-resource" class="research-note"></p>
+            <div id="dash-train-progress" class="training-progress" hidden role="status" aria-live="polite"><div class="training-progress-head"><strong id="dash-train-stage">准备训练</strong><span id="dash-train-percent">0%</span></div><progress id="dash-train-bar" value="0" max="100"></progress></div>
+            <div id="dash-train-result" class="research-note" aria-live="polite"></div>
+          </div>
+
+          <div class="panel onboarding-panel">
+            <div class="panel-title"><span>三步开始</span><span class="panel-caption">轻量、本地、可复现</span></div>
+            <div class="step-list">
+              <div class="step"><b>01</b><span><strong>加载模型</strong><small>选择预训练或本地模型</small></span></div>
+              <div class="step"><b>02</b><span><strong>输入化学式</strong><small>单点、批量或高通量筛选</small></span></div>
+              <div class="step"><b>03</b><span><strong>理解结果</strong><small>Tc、可靠度与图表一目了然</small></span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Single Predict -->
+        <section class="section" id="section-predict">
+          <div class="notice" id="model-notice" hidden><span>尚未加载模型。请先加载本地模型，或使用默认数据集训练一个新模型。</span><button class="text-button" type="button" data-open-tab="train">前往训练 →</button></div>
+          <div class="panel">
+            <div class="panel-title"><span>单点预测</span><span class="panel-caption">输入一个化学式</span></div>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="predict-input">化学式 <span class="label-hint">支持整数与小数配比</span></label>
+                <div class="input-with-action">
+                <input type="text" id="predict-input" placeholder="例如：Nb3Sn 或 Ba0.5In0.5" autocomplete="off">
+                  <button type="button" class="input-clear" id="btn-clear-predict" aria-label="清空化学式">×</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>模型</label>
+                <select id="predict-model"></select>
+              </div>
+              <div class="form-group" style="display:flex;align-items:flex-end">
+                <button class="btn btn-primary" id="btn-predict">预测 Tc</button>
+              </div>
+            </div>
+            <div class="suggestion-row"><span>常用示例</span><button type="button" class="text-chip" data-target="predict-input" data-formula="MgB2">MgB2</button><button type="button" class="text-chip" data-target="predict-input" data-formula="Nb3Sn">Nb3Sn</button><button type="button" class="text-chip" data-target="predict-input" data-formula="Ba0.5In0.5">Ba0.5In0.5</button></div>
+            <div id="predict-result" style="display:none"></div>
+          </div>
+
+          <div class="panel" id="prediction-history" hidden>
+            <div class="panel-title"><span>本次会话的预测记录</span><span class="panel-caption">点击重新填入 · 最多 8 条</span></div>
+            <div class="history-list" id="history-list"></div>
+          </div>
+
+          <details class="panel compact-details">
+            <summary>可靠度说明</summary>
+            <p style="color:var(--muted)">
+              树间差异 35% · 训练邻近度 30% · 模型 R² 25% · 物理合理性 10%。
+            </p>
+            <p class="research-note">高 ≥75 · 中 50–74 · 低 &lt;50。评分供研究参考。</p>
+          </details>
+        </section>
+
+        <!-- Batch Predict -->
+        <section class="section" id="section-batch">
+          <div class="panel">
+            <div class="panel-title"><span>批量预测</span><span class="panel-caption" id="batch-count">每行一个化学式</span></div>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label>化学式列表（每行一个，或用逗号分隔）</label>
+                <textarea id="batch-input" placeholder="Nb3Sn
+MgB2
+Ba0.5In0.5"></textarea>
+              </div>
+              <div class="form-group">
+                <label>模型</label>
+                <select id="batch-model"></select>
+              </div>
+              <div class="form-group" style="display:flex;align-items:flex-end">
+                <button class="btn btn-primary" id="btn-batch-predict">批量预测</button>
+              </div>
+            </div>
+            <div class="helper-row"><span>支持换行或逗号分隔，建议一次不超过 1000 条。</span><button type="button" class="text-button" id="btn-clear-batch">清空</button></div>
+            <p id="batch-resource" class="research-note"></p><div id="batch-progress" class="training-progress" hidden role="status"><div id="batch-progress-text"></div><progress id="batch-progress-bar" value="0" max="100"></progress></div>
+            <div id="batch-result" style="display:none;margin-top:20px"></div>
+          </div>
+        </section>
+
+        <!-- Train -->
+        <section class="section" id="section-train">
+          <div class="panel">
+            <div class="panel-title">训练新模型</div>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="train-name">模型名称 <span class="label-hint">可选，最多 80 字</span></label>
+                <input type="text" id="train-name" maxlength="80" placeholder="例如：无氧氢合金 · ET 基线">
+              </div>
+              <div class="form-group">
+                <label>算法</label>
+                <select id="train-algo">
+                  <option value="ET">Extra-Trees</option>
+                  <option value="RF">Random Forest</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>数据集</label>
+                <select id="train-dataset"><option value="">LM 基础数据</option></select>
+              </div>
+              <div class="form-group">
+                <label>树数量</label>
+                <input type="number" id="train-estimators" value="300" min="10">
+              </div>
+              <div class="form-group">
+                <label>最大深度</label>
+                <input type="text" id="train-max-depth" placeholder="默认无限制">
+              </div>
+              <div class="form-group">
+                <label>min_samples_split</label>
+                <input type="number" id="train-min-split" value="2" min="2">
+              </div>
+              <div class="form-group">
+                <label>min_samples_leaf</label>
+                <input type="number" id="train-min-leaf" value="1" min="1">
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btn-train">开始训练</button>
+            </div>
+            <p id="train-resource" class="research-note"></p>
+            <div id="train-progress" class="training-progress" hidden role="status" aria-live="polite"><div class="training-progress-head"><strong id="train-stage">准备训练</strong><span id="train-percent">0%</span></div><progress id="train-progress-bar" value="0" max="100"></progress><p class="research-note">按已完成的树数更新；切换页面可继续训练。</p></div>
+            <div id="train-result" style="display:none"></div>
+          </div>
+        </section>
+
+        <!-- Local Models -->
+        <section class="section" id="section-models">
+          <div class="panel">
+            <div class="panel-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+              <span>本地模型库</span>
+              <div id="models-batch-bar" style="display:none;align-items:center;gap:10px">
+                <span id="models-selected-count" style="color:var(--muted);font-size:0.85rem"></span>
+                <button class="btn btn-secondary btn-sm" id="btn-models-clear-selection">取消选择</button>
+                <button class="btn btn-primary btn-sm" id="btn-models-batch-delete">批量删除</button>
+              </div>
+            </div>
+            <p class="research-note" style="margin-bottom:14px">点击表头排序，勾选模型可批量删除。</p>
+            <div style="overflow:auto">
+              <table class="data-table" id="models-table">
+                <thead>
+                  <tr>
+                    <th style="width:36px"><input type="checkbox" id="models-select-all" title="全选/全不选"></th>
+                    <th class="sortable" data-sort="name">名称 <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="type">类型 <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="created_at">创建时间 <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="r2">R² <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="rmse">RMSE <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="dataset">数据集 <span class="sort-indicator"></span></th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="models-body">
+                  <tr><td colspan="8" class="empty"><div class="empty-icon">🗂️</div>加载中...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Workflow -->
+        <section class="section" id="section-workflow">
+          <div class="panel">
+            <div class="panel-title">高通量筛选</div>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label>目标元素（逗号分隔）</label>
+                <input type="text" id="workflow-elements" value="Ga, In, Sn, Bi, Zn">
+              </div>
+              <div class="form-group">
+                <label>最大元素数</label>
+                <input type="number" id="workflow-num-elements" value="3" min="2" max="5">
+              </div>
+              <div class="form-group">
+                <label>每组采样数</label>
+                <input type="number" id="workflow-num-formulas" value="500" min="10">
+              </div>
+              <div class="form-group">
+                <label>模型</label>
+                <select id="workflow-model"></select>
+              </div>
+              <div class="form-group">
+                <label>数据集</label>
+                <select id="workflow-dataset"><option value="">默认数据集</option></select>
+              </div>
+              <div class="form-group checkbox" style="align-items:center">
+                <input type="checkbox" id="workflow-stability" checked>
+                <label for="workflow-stability" style="margin:0">启用稳定性分析</label>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btn-alloy_predict">启动筛选</button>
+              <button class="btn btn-secondary" id="btn-stop-task">停止</button>
+            </div>
+            <p id="workflow-resource" class="research-note"></p><p id="workflow-progress" class="research-note" role="status"></p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">运行日志</div>
+            <div class="log-box" id="workflow-log">等待启动...</div>
+          </div>
+
+          <div class="panel" id="workflow-result" style="display:none"></div>
+        </section>
+
+        <!-- Data -->
+        <section class="section" id="section-data">
+          <div id="dataset-list-view">
+          <div class="panel">
+            <div class="panel-title"><span>本地数据集</span><button type="button" class="btn btn-secondary btn-sm" id="btn-open-analysis">可视化分析 →</button></div>
+            <div class="table-scroll"><table class="data-table"><thead><tr><th>名称</th><th>总行数</th><th>有效行</th><th>创建时间</th><th>操作</th></tr></thead><tbody id="datasets-body"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody></table></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><span>导入自定义数据</span><span class="panel-caption">与基础数据分开保存</span></div>
+            <p class="research-note" style="margin-bottom:16px">上传包含 <code>formula</code> 和 <code>Tc</code>（K）的 CSV 或 Excel 文件。<a href="data:text/csv;charset=utf-8,formula%2CTc%0AMgB2%2C39%0AYBa2Cu3O7%2C90" download="lmsc_dataset_template.csv">下载 CSV 模板 ↓</a></p>
+            <details class="format-example"><summary>查看 CSV 示例</summary><pre>formula,Tc
+MgB2,39
+YBa2Cu3O7,90</pre><span>Tc 单位：K</span></details>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label>数据集名称</label>
+                <input type="text" id="dataset-name" placeholder="可选">
+              </div>
+            </div>
+            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="选择或拖放数据集文件">
+              <input type="file" id="dataset-file" accept=".csv,.xlsx" hidden>
+              <div id="dropzone-text">
+                <div style="font-size:2rem;margin-bottom:8px">⬆️</div>
+                <strong>点击或拖拽 CSV / Excel 文件至此</strong>
+                <p style="font-size:0.85rem;margin-top:6px">Excel 需安装可选依赖</p>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btn-upload">校验并导入</button>
+            </div>
+            <p id="upload-status" class="research-note" role="status" aria-live="polite"></p>
+          </div>
+
+          </div>
+          <div id="dataset-detail-view" hidden>
+            <button type="button" class="text-button" id="btn-dataset-back">← 返回数据集</button>
+            <div class="panel dataset-detail">
+              <div class="panel-title"><span id="dataset-detail-title">数据集详情</span><span class="panel-caption" id="dataset-detail-path"></span></div>
+              <div class="dataset-detail-summary" id="dataset-detail-summary" role="status"></div>
+              <button class="btn btn-secondary btn-sm" type="button" id="btn-analyze-dataset">分析此数据集 →</button>
+              <details class="dataset-description"><summary>数据说明</summary><div id="dataset-detail-description" class="description-content"></div></details>
+              <div class="panel-title"><span>数据预览</span><span class="panel-caption">每页 20 行</span></div>
+              <div class="table-scroll"><table class="data-table"><thead id="dataset-detail-head"></thead><tbody id="dataset-detail-body"></tbody></table></div>
+              <div class="dataset-pagination"><button class="btn btn-secondary btn-sm" id="dataset-prev" type="button">上一页</button><span id="dataset-page"></span><button class="btn btn-secondary btn-sm" id="dataset-next" type="button">下一页</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="section-phase">
+          <div class="panel">
+            <div class="panel-title"><span>成分相图</span><span class="panel-caption">预测 Tc · 原子分数</span></div>
+            <p class="research-note" style="margin-bottom:16px">前两种或前三种元素变化，其余元素固定；三角坐标为变化组分归一化原子百分比。调整输入顺序可选择三角图元素。模型预测不表示物相稳定性。</p>
+            <div class="form-grid">
+              <div class="form-group"><label for="phase-elements">元素（2–10 种）</label><input id="phase-elements" type="text" value="Ga, In, Sn" placeholder="Ga, In, Sn"></div>
+              <div class="form-group"><label for="phase-model">模型</label><select id="phase-model"></select></div>
+              <div class="form-group"><label for="phase-steps">网格等分数</label><input id="phase-steps" type="number" value="20" min="4" max="10000" step="1"></div>
+              <div class="form-group"><label for="phase-fixed">第四种及之后的固定组分（at.%）</label><input id="phase-fixed" type="text" value="" placeholder="例如：10, 5"></div>
+              <div class="form-group"><label for="phase-dpi">图片 DPI</label><input id="phase-dpi" type="number" value="300" min="72" max="600" step="1"></div>
+            </div>
+            <div class="btn-group"><button type="button" class="btn btn-primary" id="btn-phase">生成相图</button><button type="button" class="btn btn-secondary" id="btn-phase-png" disabled>下载 PNG</button><button type="button" class="btn btn-secondary" id="btn-phase-csv" disabled>下载数据</button></div>
+            <p class="research-note" id="phase-estimate"></p>
+            <progress id="phase-progress" max="100" value="0" hidden></progress>
+            <p class="research-note" id="phase-status" role="status" aria-live="polite">选择模型与元素后生成。</p>
+            <div class="phase-image-wrap" id="phase-image-wrap" hidden><img id="phase-image" alt="预测 Tc 成分相图"></div>
+          </div>
+        </section>
+
+        <!-- Visualization -->
+        <section class="section" id="section-visualization">
+          <button type="button" class="text-button" id="btn-analysis-back">← 返回数据集</button>
+          <div class="panel">
+            <div class="panel-title"><span>数据集可视化分析</span><span class="panel-caption">选择数据集与 Tc 范围</span></div>
+            <div class="form-grid">
+              <div class="form-group"><label for="analysis-dataset">数据集</label><select id="analysis-dataset"><option value="builtin">LM-based 基础数据集</option></select></div>
+              <div class="form-group"><label for="analysis-threshold">最低 Tc（K）</label><input type="number" id="analysis-threshold" value="0" min="0" step="any"></div>
+              <div class="form-group" style="display:flex;align-items:flex-end"><button class="btn btn-primary" id="btn-analysis" type="button">更新分析</button></div>
+            </div>
+            <p id="analysis-status" class="research-note" role="status" aria-live="polite">进入页面后自动分析当前数据。</p>
+            <p id="viz-resource" class="research-note"></p>
+          </div>
+          <div class="analysis-grid">
+            <div class="panel"><div class="panel-title"><span>Tc 分布 <span class="panel-caption">K · 样本数</span></span><button type="button" class="btn btn-secondary btn-sm analysis-download" data-chart="analysis-tc" disabled>下载 SVG</button></div><div id="analysis-tc" class="analysis-chart"></div></div>
+            <div class="panel"><div class="panel-title"><span>元素出现频次 <span class="panel-caption">前 15 种</span></span><button type="button" class="btn btn-secondary btn-sm analysis-download" data-chart="analysis-elements" disabled>下载 SVG</button></div><div id="analysis-elements" class="analysis-chart"></div></div>
+            <div class="panel"><div class="panel-title"><span>每个化学式的元素数 <span class="panel-caption">样本数</span></span><button type="button" class="btn btn-secondary btn-sm analysis-download" data-chart="analysis-components" disabled>下载 SVG</button></div><div id="analysis-components" class="analysis-chart"></div></div>
+            <div class="panel"><div class="panel-title"><span>本次批量预测 <span class="panel-caption">当前会话</span></span><button type="button" class="btn btn-secondary btn-sm analysis-download" data-chart="analysis-batch" disabled>下载 SVG</button></div><div id="analysis-batch" class="analysis-chart">暂无批量结果。<button class="text-button" type="button" data-open-tab="batch">前往批量预测 →</button></div></div>
+          </div>
+          <div class="panel legacy-viz"><div class="panel-title"><span>数据集特征</span><span class="panel-caption">当前数据集 · PNG 导出</span></div>
+          <div class="panel">
+            <div class="panel-title">可视化控制</div>
+            <div class="form-grid">
+              <div class="form-group" hidden>
+                <label>模型</label>
+                <select id="viz-model"><option value="ET">Extra-Trees</option><option value="RF">Random Forest</option></select>
+              </div>
+              <div class="form-group" hidden>
+                <label>Tc 阈值 (K)</label>
+                <input type="number" id="viz-threshold" value="5" min="0" step="1">
+              </div>
+              <div class="form-group">
+                <label>图片 DPI</label>
+                <input type="number" id="viz-dpi" value="300" min="72" max="600" step="1">
+              </div>
+              <div class="form-group" hidden>
+                <label for="viz-elements">三元体系（逗号分隔）</label>
+                <input type="text" id="viz-elements" value="Ga,In,Sn" placeholder="Ga,In,Sn">
+              </div>
+              <div class="form-group" style="display:flex;align-items:flex-end;gap:10px">
+                <button class="btn btn-primary" id="btn-viz-generate">生成图表</button>
+                <button class="btn btn-secondary" id="btn-viz-reset">重置</button>
+              </div>
+            </div>
+            <p id="viz-status" role="status" style="color:var(--muted);margin-top:12px;font-size:0.85rem"></p>
+            <p class="research-note">使用上方所选数据集与 Tc 筛选条件。</p>
+          </div>
+
+          <div class="plot-grid" id="viz-grid">
+            <div class="plot-card" data-plot="fig2a">
+              <div class="plot-title">Tc 分布直方图</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig2a">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig2a">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig2a" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig2b">
+              <div class="plot-title">元素数量统计</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig2b">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig2b">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig2b" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig2c">
+              <div class="plot-title">元素周期表热图</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig2c">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig2c">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig2c" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig4b" hidden>
+              <div class="plot-title">数据收敛曲线</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig4b">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig4b">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig4b" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig4c" hidden>
+              <div class="plot-title">二元合金 Tc 热图</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig4c">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig4c">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig4c" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig5" hidden>
+              <div class="plot-title">预测 vs 实验</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig5">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig5">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig5" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="fig5d" hidden>
+              <div class="plot-title">RF / ET / 实验对比</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="fig5d">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="fig5d">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="fig5d" disabled>保存</button>
+              </div>
+            </div>
+            <div class="plot-card" data-plot="ternary" hidden>
+              <div class="plot-title">Ga-In-Sn 三元相图</div>
+              <div class="plot-body">
+                <div class="plot-placeholder">点击“生成所有图表”渲染</div>
+                <img class="plot-image" style="display:none" alt="ternary">
+                <div class="plot-loading"><div class="spinner"></div></div>
+              </div>
+              <div class="plot-actions">
+                <button class="btn btn-secondary btn-sm btn-viz-single" data-plot="ternary">生成</button>
+                <button class="btn btn-secondary btn-sm btn-viz-download" data-plot="ternary" disabled>保存</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+      </div>
+      <footer class="workspace-footer"><span>LMSC · Superconductivity, explored.</span><span>材料预测与可视化分析 · v{{ app_version }}</span></footer>
+    </main>
+  </div>
+
+  <button class="sidebar-backdrop" id="sidebar-backdrop" aria-label="关闭导航菜单" tabindex="-1" hidden></button>
+  <dialog class="image-dialog" id="image-dialog" aria-label="图表放大预览"><div class="dialog-toolbar"><strong id="image-dialog-title">图表预览</strong><button type="button" class="btn btn-secondary btn-sm" id="btn-close-image">关闭 · Esc</button></div><img id="image-dialog-img" alt="图表放大预览"></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='app.js') }}?v=23"></script>
+</body>
+</html>

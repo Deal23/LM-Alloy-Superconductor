@@ -1,0 +1,16 @@
+number,submitted_filename,repository_path,rows,comparison,submitted_sha256,description
+1,mdr_clean.csv,data/processed/mdr_clean.csv,20995,equal CSV records,cf5323d27fb1597f01e87cacbd47404c67436f2098725c3ca61bc916e62a0536,Dataset for model training
+2,1-3Alloy_50.csv,data/research/sampling/alloy_1_to_3_50.csv,848,equal CSV records,42f11118c218b6aba36b3fdc5b17afe701273ab965577c4cbb4449c8931b192e,Supplementary information for Figure 4(b) in article
+3,1-3Alloy_200.csv,data/research/sampling/alloy_1_to_3_200.csv,848,equal CSV records,858951cb38560c05f46a2caa27cdd2f70178ac3f8cbb6e7c4e5bf511e7d2ad75,Supplementary information for Figure 4(b) in article
+4,1-3Alloy_500.csv,data/research/sampling/alloy_1_to_3_500.csv,848,equal CSV records,be2bf8f2ef52d0b55711b10e83a212b84d8d36d5074e0b1e81feecff19a5c1c6,Supplementary information for Figure 4(b) in article
+5,1-3Alloy_1k.csv,data/research/sampling/alloy_1_to_3_1k.csv,848,equal CSV records,eaca047d98e82ab6f4a5342b4f2417f1605007cdbe19048cc54a530a489f7213,Supplementary information for Figure 4(b) in article
+6,1-3Alloy_2k.csv,data/research/sampling/alloy_1_to_3_2k.csv,848,equal CSV records,5ef8ab2dd09728bb1686f5d6a48349a8cfc77445f05a516c8c10430a3716def9,Supplementary information for Figure 4(b) in article
+7,1-3Alloy_5k.csv,data/research/sampling/alloy_1_to_3_5k.csv,848,equal CSV records,ee50e93fe518bff82877311c12d877fac57d5937376139543984ecd783eb7aa1,Supplementary information for Figure 4(b) in article
+8,Hype_et.csv,data/research/tuning/hyperparameters_et.csv,270,equal CSV records,7b58b73f7a7997045ae56c8760911cd54031e76dde7adaba06cc2f613896dfaa,Supplementary information for Table 4 in article
+9,Hype_rf.csv,data/research/tuning/hyperparameters_rf.csv,270,equal CSV records,0df8f282a2680a9be6ee2e54c8ab69200c84a11171619d630130664bfba2d31a,Supplementary information for Table 5 in article
+10,Ga-In-Sn_ET.csv,data/research/ga_in_sn/ga_in_sn_et.csv,10000,equal CSV records,e2fc5500be150b1482a71966325b7f0e02289cb2f28f438d36774d46604684a4,"Supplementary information for Figure 4(c,i) in article"
+11,Ga-In-Sn_RF.csv,data/research/ga_in_sn/ga_in_sn_rf.csv,10000,equal CSV records,c07841fe4b4b31e3d2b4b2729fff7519acfeaad838ef7dcd37e5f7fe03da034b,"Supplementary information for Figure 4(d,i) in article"
+12,2Alloy_et.csv,data/research/screening/alloy_2_et.csv,2145,equal CSV records,d6e6cea9b51c42068b0207526129dc6ef47e1deddc9b690fc7acc1c921478625,"Supplementary information for Figure 4(c,ii) in article"
+13,2Alloy_rf.csv,data/research/screening/alloy_2_rf.csv,2145,equal CSV records,fea1ed4950a2c133deced2f69c9d7e5e132063046f7710ac8b3fd0ca1ece3e61,"Supplementary information for Figure 4(d,ii) in article"
+14,3Alloy_et.csv,data/research/screening/alloy_3_et.csv,45760,equal CSV records,b672afac3fb8b4519e3b741117592f57262dff74d1ecd0583c4ef908a4981890,"Supplementary information for Figure 4(c,iii) in article"
+15,3Alloy_rf.csv,data/research/screening/alloy_3_rf.csv,45760,equal CSV records,23652b6c3a7d80c76ef5424e8c0565309db1fc1d875c7e9f9dce5371e63c1f2a,"Supplementary information for Figure 4(d,iii) in article"
