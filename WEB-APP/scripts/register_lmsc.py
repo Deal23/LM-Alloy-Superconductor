@@ -24,7 +24,7 @@ def main():
 
     launcher_dir.mkdir(parents=True, exist_ok=True)
     launcher.write_text(
-        f'@echo off\n{marker}\n"{root / ".venv" / "Scripts" / "python.exe"}" '
+        f'@echo off\n{marker}\n"{sys.executable}" '
         f'-B "{root / "run.py"}" %*\n',
         encoding="mbcs",
     )

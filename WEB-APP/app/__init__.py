@@ -6,7 +6,7 @@ from app.config import config
 from app.logging_config import setup_logging
 from app.services.models import ModelService
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 
 def create_app() -> Flask:

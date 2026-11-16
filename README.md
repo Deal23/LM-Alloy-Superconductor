@@ -20,10 +20,10 @@ Chen Hua, Jing Liu. **Tree model machine learning to identify liquid metal-based
 
 ## 快速开始
 
-克隆仓库后，选择需要的项目并进入其目录：
+克隆仓库后，在仓库根目录选择需要的项目：
 
 ```bash
-git clone git@github.com:Deal23/LM-Alloy-Superconductor.git
+git clone https://github.com/Deal23/LM-Alloy-Superconductor.git
 cd LM-Alloy-Superconductor
 ```
 
@@ -46,7 +46,7 @@ pip install -r config/requirements.txt
 python -m lmsc test -q
 ```
 
-**Web 应用**：启动后访问 <http://localhost:5050>。首次使用可在网页中训练模型，详见[项目文档](WEB-APP/README.md)。
+**Web 应用**：macOS/Linux 使用以下命令；Windows 安装与启动方式见 [Web 文档](WEB-APP/README.md)。启动后访问 <http://localhost:5050>。
 
 ```bash
 cd WEB-APP
@@ -54,7 +54,7 @@ cd WEB-APP
 ./scripts/start.sh
 ```
 
-以上命令分别从仓库根目录进入项目；虚拟环境激活命令适用于 macOS/Linux。
+以上命令分别从仓库根目录进入项目；体系预测的虚拟环境激活命令适用于 macOS/Linux。
 
 ## 引用与许可
 

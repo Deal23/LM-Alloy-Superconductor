@@ -2,7 +2,7 @@
 
 基于树模型的超导临界温度（Tc）预测与高通量筛选工具。支持单点和批量预测、模型训练、数据集管理及结果可视化。
 
-当前版本：**0.1.3** · Python 3.10+（推荐 3.12）
+当前版本：**0.1.4** · Python 3.10+（推荐 3.12）
 
 ## 快速开始
 
@@ -24,24 +24,25 @@
 ./scripts/start.sh
 ```
 
-浏览器打开 <http://127.0.0.1:5050>，按 `Ctrl+C` 停止服务。启动命令可加 `--port 8080` 指定端口。脚本在项目内创建 `.venv/`。
+浏览器打开 <http://127.0.0.1:5050>，按 `Ctrl+C` 停止服务。启动命令可加 `--port 8080` 指定端口。虚拟环境默认在用户本地目录，不在项目或同步文件夹内：macOS/Linux 为 `~/.local/share/LMSC/venvs/<项目路径哈希>/`，Windows 为 `%LOCALAPPDATA%\LMSC\venvs\<项目路径哈希>\`。每个项目路径使用独立环境；移动项目后需重新安装。可设置绝对路径环境变量 `LMSC_VENV_DIR` 自定义位置，安装、启动和注册时必须一致，建议选择同步目录以外的位置。
 
 手动安装（macOS/Linux）：
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -B run.py
+VENV_DIR="$(python3 scripts/venv_path.py)"
+python3 -m venv "$VENV_DIR"
+"$VENV_DIR/bin/python" -m pip install -r requirements.txt
+"$VENV_DIR/bin/python" -B run.py
 ```
 
 CSV 导入无需额外依赖。Excel 导入可选装 `openpyxl`：
 
 ```bash
 # Excel .xlsx 导入（可选，CSV 不需要）
-.venv/bin/python -m pip install 'openpyxl>=3.1.0'
+"$(python3 scripts/venv_path.py)/bin/python" -m pip install 'openpyxl>=3.1.0'
 ```
 
-Windows 将 `.venv/bin/python` 替换为 `.venv\Scripts\python.exe`，安装后重启服务。
+Windows 可运行 `python scripts\venv_path.py` 查看环境路径，然后使用该目录下的 `Scripts\python.exe` 安装可选依赖；安装后重启服务。旧版项目内 `.venv/` 和 `.venv-windows/` 不再使用：确认新环境可用后可手动删除。已有模型可能依赖旧版 scikit-learn，请在外置环境安装与模型训练时兼容的版本。
 
 首次使用时，可在「训练模型」中使用默认数据集训练，或将可信的 `*.joblib` 和对应的 `*_feature.joblib` 放入 `ml/models/`。加载已有模型时使用与训练时相同的 scikit-learn 版本。
 
