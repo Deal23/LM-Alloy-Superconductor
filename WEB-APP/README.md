@@ -13,7 +13,7 @@
 ./scripts/start.sh
 ```
 
-浏览器将打开 <http://127.0.0.1:5050>。可通过 `./scripts/start.sh --port 8080` 指定端口。Windows 用户依次运行 `scripts\install.bat` 和 `scripts\start.bat`。脚本在项目内创建 `.venv/`。
+浏览器将打开 <http://127.0.0.1:5050>。可通过 `./scripts/start.sh --port 8080` 指定端口。Windows 用户依次运行 `scripts\install.bat` 和 `scripts\start.bat`。脚本在项目内创建 `.venv/`。Windows 安装脚本还会为当前用户注册 `lmsc` 命令：安装完成后打开新的终端，在任意目录运行 `lmsc` 即可启动；也可运行 `lmsc --port 8080`。如果已有同名命令，注册会跳过，仍可使用 `scripts\start.bat`。移动项目后需重新运行安装脚本以更新启动器。
 
 手动安装（macOS/Linux）：
 
