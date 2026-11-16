@@ -71,10 +71,15 @@ def update_app():
     try:
         from app.services.updates import apply_update
         result = apply_update(config.PROJECT_ROOT, (request.get_json(silent=True) or {}).get("version"))
-        return jsonify({"success": True, **result})
+        restart = os.environ.get("LMSC_SUPERVISED") == "1"
+        if restart:
+            timer = threading.Timer(1.5, lambda: os._exit(75))
+            timer.daemon = True
+            timer.start()
+        return jsonify({"success": True, "restarting": restart, **result})
     except Exception as exc:
         logger.warning("Update failed: %s", exc)
-        return jsonify({"error": "更新失败，已尝试恢复原文件；请检查网络和远端代码"}), 400
+        return jsonify({"error": f"更新失败：{exc}。程序已尝试恢复；如恢复失败，请查看服务日志并重新安装。"}), 400
 
 
 def _default_data_path() -> str:

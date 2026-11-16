@@ -71,13 +71,15 @@ def _allowed(name):
         return False
     if len(path.parts) == 1:
         return name in {"run.py", "requirements.txt", "README.md", "LICENSE", "CITATION.cff"}
+    if name == "docs/FILE_LOCATIONS.md":
+        return True
     if path.parts[0] not in {"app", "ml", "utils", "scripts"}:
         return False
     return not (path.parts[:2] == ("ml", "models") or any(p.startswith(".") or p == "__pycache__" for p in path.parts))
 
 
 def apply_update(root, expected):
-    """Download a checked release and replace program files, retaining a backup."""
+    """Synchronize managed program files; user data is never included."""
     if not _lock.acquire(blocking=False):
         raise ValueError("更新正在进行")
     try:
@@ -119,17 +121,33 @@ def apply_update(root, expected):
                     raise ValueError("更新包不完整")
                 if _module_version((staged / "app/__init__.py").read_text(encoding="utf-8")) != release["latest"]:
                     raise ValueError("更新包版本与发布版本不一致")
-            backup_root = root / ".update-backups"
-            if backup_root.is_symlink():
-                raise ValueError("备份目录不能是符号链接")
-            backup_root.mkdir(exist_ok=True)
-            backup = Path(tempfile.mkdtemp(prefix="update-", dir=backup_root))
+            stale = []
+            for directory in ("app", "ml", "utils", "scripts"):
+                base = root / directory
+                if base.is_symlink():
+                    raise ValueError("程序目录不能是符号链接")
+                if not base.exists():
+                    continue
+                for current, dirs, files in os.walk(base, followlinks=False):
+                    current_path = Path(current)
+                    dirs[:] = [d for d in dirs if _allowed((current_path / d / "placeholder").relative_to(root).as_posix())]
+                    if any((current_path / d).is_symlink() for d in dirs):
+                        raise ValueError("程序目录不能包含符号链接")
+                    for filename in files:
+                        path = current_path / filename
+                        name = path.relative_to(root).as_posix()
+                        if _allowed(name):
+                            if path.is_symlink():
+                                raise ValueError("程序文件不能是符号链接")
+                            if name not in names:
+                                stale.append(path)
+            backup = Path(tmp) / "backup"
             changed = []
             try:
                 for name in sorted(names):
                     dest = root.joinpath(*PurePosixPath(name).parts)
-                    old = backup.joinpath(*PurePosixPath(name).parts)
                     existed = dest.exists()
+                    old = backup.joinpath(*PurePosixPath(name).parts)
                     if existed:
                         old.parent.mkdir(parents=True, exist_ok=True)
                         shutil.copy2(dest, old)
@@ -138,14 +156,29 @@ def apply_update(root, expected):
                     shutil.copyfile(staged.joinpath(*PurePosixPath(name).parts), dest)
                     if not existed and name.startswith("scripts/") and name.endswith(".sh"):
                         dest.chmod(0o755)
-            except Exception:
+                for path in stale:
+                    old = backup / path.relative_to(root)
+                    old.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(path, old)
+                    changed.append((path, old, True))
+                    path.unlink()
+            except Exception as exc:
+                failures = []
                 for dest, old, existed in reversed(changed):
-                    if existed:
-                        shutil.copy2(old, dest)
-                    elif dest.exists():
-                        dest.unlink()
+                    try:
+                        if existed:
+                            shutil.copy2(old, dest)
+                        elif dest.exists():
+                            dest.unlink()
+                    except OSError as restore_error:
+                        failures.append(str(restore_error))
+                if failures:
+                    # Keep a recovery copy outside the temporary directory.
+                    recovery = Path(tempfile.mkdtemp(prefix="lmsc-recovery-"))
+                    shutil.copytree(backup, recovery / "backup", dirs_exist_ok=True)
+                    raise RuntimeError(f"恢复失败，备份保存在 {recovery}") from exc
                 raise
-        return {"version": release["latest"], "backup": backup.relative_to(root).as_posix()}
+        return {"version": release["latest"]}
     finally:
         _lock.release()
 

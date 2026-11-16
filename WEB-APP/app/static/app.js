@@ -63,7 +63,7 @@ async function checkUpdate() {
     else if (!info.ready) $('update-status').textContent = `发现 v${info.latest}，暂时无法更新`;
     else {
       availableUpdate = info.latest;
-      $('update-status').textContent = `发现 v${info.latest}。更新将覆盖程序文件，保留数据和模型；完成后需重启。`;
+      $('update-status').textContent = `发现 v${info.latest}。更新会覆盖程序文件并删除远端不存在的程序文件，保留用户数据。`;
       $('btn-apply-update').hidden = false;
     }
   } catch (error) { $('update-status').textContent = error.message; }
@@ -71,7 +71,7 @@ async function checkUpdate() {
 }
 
 async function applyUpdate() {
-  if (!availableUpdate || !confirm(`确定更新到 v${availableUpdate}？程序文件将被覆盖，请先保存本地代码修改。更新后需要重启。`)) return;
+  if (!availableUpdate || !confirm(`确定更新到 v${availableUpdate}？程序文件将被覆盖或删除；请先另行保存需要保留的本地代码修改。`)) return;
   const button = $('btn-apply-update');
   setLoading(button, true, '更新中');
   try {
@@ -79,7 +79,7 @@ async function applyUpdate() {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({version: availableUpdate}), timeout: 120000,
     });
-    $('update-status').textContent = `已更新至 v${result.version}，请停止并重新启动服务。旧文件备份：${result.backup}。如依赖有变化，请重新运行安装脚本。`;
+    $('update-status').textContent = result.restarting ? `已更新至 v${result.version}，服务正在重启；若未恢复请手动启动。依赖变化时请重新运行安装脚本。` : `已更新至 v${result.version}，请手动重启服务；依赖变化时请重新运行安装脚本。`;
     availableUpdate = null;
     button.hidden = true;
     $('btn-check-update').disabled = true;

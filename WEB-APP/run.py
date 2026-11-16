@@ -7,6 +7,7 @@ Usage: python run.py [--host 0.0.0.0] [--port 5050] [--debug]
 import argparse
 import os
 import socket
+import subprocess
 import sys
 import threading
 import webbrowser
@@ -62,7 +63,7 @@ def main():
     print("=" * 50)
 
     try:
-        app.run(host=args.host, port=args.port, debug=args.debug)
+        app.run(host=args.host, port=args.port, debug=args.debug, use_reloader=False)
     except OSError as e:
         if "Address already in use" in str(e):
             print(f"[错误] 端口 {args.port} 启动时被占用：{e}")
@@ -72,4 +73,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if os.environ.get("LMSC_SUPERVISED") == "1":
+        main()
+    else:
+        env = os.environ.copy()
+        env["LMSC_SUPERVISED"] = "1"
+        while True:
+            try:
+                result = subprocess.call([sys.executable, "-B", __file__, *sys.argv[1:]], env=env)
+            except KeyboardInterrupt:
+                break
+            if result != 75:
+                sys.exit(result)
+            print("更新完成，正在重启服务……", flush=True)
