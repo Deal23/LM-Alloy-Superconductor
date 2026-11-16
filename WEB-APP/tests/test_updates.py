@@ -1,4 +1,5 @@
 import io
+import base64
 import json
 import zipfile
 
@@ -46,12 +47,11 @@ def test_update_rejects_unsafe_files(tmp_path, monkeypatch, name):
 
 def test_default_branch_version_uses_pinned_commit(monkeypatch):
     def get(url, limit):
-        if url == updates.API:
-            return json.dumps({"default_branch": "main"}).encode()
-        if "/commits/" in url:
-            return json.dumps({"sha": "b" * 40}).encode()
+        if "/commits?" in url:
+            return json.dumps([{"sha": "b" * 40}]).encode()
         assert "b" * 40 in url
-        return b'__version__ = "0.1.2"'
+        return json.dumps({"encoding": "base64", "content": base64.b64encode(
+            b'__version__ = "0.1.2"').decode()}).encode()
     monkeypatch.setattr(updates, "_get", get)
     info = updates.latest_release()
     assert info["latest"] == "0.1.2"

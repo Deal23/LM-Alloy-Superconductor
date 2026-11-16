@@ -1,5 +1,6 @@
 """Manual, local-only updates from a pinned default-branch commit."""
 import ast
+import base64
 import ipaddress
 import json
 import os
@@ -30,7 +31,8 @@ def _version(value):
 
 def _get(url, limit):
     request = Request(url, headers={"User-Agent": "LMSC-Web-App", "Accept": "application/vnd.github+json"})
-    with urlopen(request, timeout=20) as response:
+    timeout = 60 if url.startswith("https://codeload.github.com/") else 8
+    with urlopen(request, timeout=timeout) as response:
         data = response.read(limit + 1)
     if len(data) > limit:
         raise ValueError("下载内容超过大小限制")
@@ -49,14 +51,15 @@ def _module_version(content):
 
 
 def latest_release():
-    repository = json.loads(_get(API, 1024 * 1024))
-    branch = repository["default_branch"]
-    from urllib.parse import quote
-    commit = json.loads(_get(f"{API}/commits/{quote(branch, safe='')}", 1024 * 1024))["sha"]
+    commits = json.loads(_get(f"{API}/commits?per_page=1", 1024 * 1024))
+    commit = commits[0]["sha"]
     if not re.fullmatch(r"[0-9a-f]{40}", commit):
         raise ValueError("远端提交标识无效")
-    url = f"https://raw.githubusercontent.com/{REPOSITORY}/{commit}/WEB-APP/app/__init__.py"
-    version = _module_version(_get(url, 1024 * 1024).decode("utf-8"))
+    url = f"{API}/contents/WEB-APP/app/__init__.py?ref={commit}"
+    content = json.loads(_get(url, 1024 * 1024))
+    if content.get("encoding") != "base64":
+        raise ValueError("无法读取远端版本文件")
+    version = _module_version(base64.b64decode(content["content"]).decode("utf-8"))
     return {"current": __version__, "latest": version, "newer": _version(version) > _version(__version__),
             "ready": True, "notes": "来自仓库默认分支。", "url": f"https://github.com/{REPOSITORY}/commit/{commit}",
             "commit": commit}
