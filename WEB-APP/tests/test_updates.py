@@ -46,6 +46,7 @@ def test_update_rejects_unsafe_files(tmp_path, monkeypatch, name):
 
 
 def test_default_branch_version_uses_pinned_commit(monkeypatch):
+    monkeypatch.setattr(updates, "__version__", "0.1.0")
     def get(url, limit):
         if "/commits?" in url:
             return json.dumps([{"sha": "b" * 40}]).encode()
