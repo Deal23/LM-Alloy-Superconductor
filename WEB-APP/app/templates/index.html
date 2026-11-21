@@ -7,7 +7,7 @@
   <meta name="description" content="LMSC 超导材料临界温度预测与可视化分析工作台">
   <title>LMSC · 超导材料预测</title>
   <script>try { document.documentElement.dataset.theme = localStorage.getItem('lmsc-theme') || 'light'; } catch (_) { /* storage is optional */ }</script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=12">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=14">
 </head>
 <body>
   <div class="app">
@@ -21,7 +21,7 @@
       </div>
       <nav class="nav">
         <div class="nav-label">工作台</div>
-        <button type="button" class="nav-item active" data-tab="dashboard" id="nav-dashboard" data-title="概览">
+        <button type="button" class="nav-item active" data-tab="dashboard" id="nav-dashboard" data-title="概览" aria-current="page">
           <span class="nav-icon">⌂</span> 概览
         </button>
         <button type="button" class="nav-item" data-tab="predict" id="nav-predict" data-title="单点预测">
@@ -79,9 +79,9 @@
         <section class="section active" id="section-dashboard">
           <div class="hero">
             <div class="hero-copy">
-              <div class="kicker"><span class="kicker-dot"></span> 材料发现 · 快速工作流</div>
-              <h2>从化学式开始，<br><span>探索超导临界温度。</span></h2>
-              <p>输入化学式，快速预测 Tc 并查看可靠度。</p>
+              <div class="kicker">超导材料研究工作台</div>
+              <h2>从化学式开始，<br>探索超导临界温度</h2>
+              <p>输入化学式，使用本地模型预测 Tc 并查看可靠度评分</p>
               <div class="quick-predict" role="search">
                 <input type="text" id="dash-formula" placeholder="例如 MgB2、Nb3Sn" aria-label="首页快速预测化学式">
                 <button class="btn btn-primary" id="btn-dash-predict">开始预测 <span aria-hidden="true">→</span></button>
@@ -93,33 +93,29 @@
                 <button type="button" class="example-chip" data-formula="Ba0.5In0.5">Ba₀.₅In₀.₅</button>
               </div>
             </div>
-            <div class="hero-orbit" aria-hidden="true">
-              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-              <div class="orbit-core"><strong>Tc</strong><span>predict</span></div>
-              <i class="atom atom-one"></i><i class="atom atom-two"></i><i class="atom atom-three"></i>
+            <div class="hero-context">
+              <span class="hero-context-label">研究提示</span>
+              <strong>预测辅助筛选<br>实验验证结论</strong>
+              <p>可靠度评分不是实验成功概率；成分图不表示物相稳定性。</p>
             </div>
           </div>
           <div class="card-grid">
             <div class="card stat-card accent-cyan">
-              <div class="stat-icon">◉</div>
               <h3>当前模型</h3>
               <div class="value" id="dash-model-name">-</div>
               <div class="sub" id="dash-model-status">等待加载</div>
             </div>
             <div class="card stat-card accent-blue">
-              <div class="stat-icon">R²</div>
               <h3>R²</h3>
               <div class="value" id="dash-model-r2">-</div>
               <div class="sub">决定系数</div>
             </div>
             <div class="card stat-card accent-purple">
-              <div class="stat-icon">≈</div>
               <h3>RMSE</h3>
               <div class="value" id="dash-model-rmse">-</div>
               <div class="sub">均方根误差 (K)</div>
             </div>
             <div class="card stat-card accent-amber">
-              <div class="stat-icon">#</div>
               <h3>特征维度</h3>
               <div class="value" id="dash-model-features">-</div>
               <div class="sub">元素组成向量</div>
@@ -131,7 +127,7 @@
             <p class="research-note" id="dashboard-dataset-info" style="margin-bottom:14px">默认数据：LM-based-SC · 正在读取</p>
             <div class="form-grid">
               <div class="form-group">
-                <label>选择模型</label>
+                <label for="select-model">选择模型</label>
                 <select id="select-model"></select>
               </div>
               <div class="form-group" style="display:flex;align-items:flex-end">
@@ -174,7 +170,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>模型</label>
+                <label for="predict-model">模型</label>
                 <select id="predict-model"></select>
               </div>
               <div class="form-group" style="display:flex;align-items:flex-end">
@@ -287,12 +283,12 @@ Ba0.5In0.5"></textarea>
                 <thead>
                   <tr>
                     <th style="width:36px"><input type="checkbox" id="models-select-all" title="全选/全不选"></th>
-                    <th class="sortable" data-sort="name">名称 <span class="sort-indicator"></span></th>
-                    <th class="sortable" data-sort="type">类型 <span class="sort-indicator"></span></th>
-                    <th class="sortable" data-sort="created_at">创建时间 <span class="sort-indicator"></span></th>
-                    <th class="sortable" data-sort="r2">R² <span class="sort-indicator"></span></th>
-                    <th class="sortable" data-sort="rmse">RMSE <span class="sort-indicator"></span></th>
-                    <th class="sortable" data-sort="dataset">数据集 <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="name" tabindex="0" aria-label="按名称排序">名称 <span class="sort-indicator" aria-hidden="true"></span></th>
+                    <th class="sortable" data-sort="type" tabindex="0" aria-label="按类型排序">类型 <span class="sort-indicator" aria-hidden="true"></span></th>
+                    <th class="sortable" data-sort="created_at" tabindex="0" aria-label="按创建时间排序">创建时间 <span class="sort-indicator" aria-hidden="true"></span></th>
+                    <th class="sortable" data-sort="r2" tabindex="0" aria-label="按 R² 排序">R² <span class="sort-indicator" aria-hidden="true"></span></th>
+                    <th class="sortable" data-sort="rmse" tabindex="0" aria-label="按 RMSE 排序">RMSE <span class="sort-indicator" aria-hidden="true"></span></th>
+                    <th class="sortable" data-sort="dataset" tabindex="0" aria-label="按数据集排序">数据集 <span class="sort-indicator" aria-hidden="true"></span></th>
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -572,6 +568,6 @@ YBa2Cu3O7,90</pre><span>Tc 单位：K</span></details>
   <button class="sidebar-backdrop" id="sidebar-backdrop" aria-label="关闭导航菜单" tabindex="-1" hidden></button>
   <dialog class="image-dialog" id="image-dialog" aria-label="图表放大预览"><div class="dialog-toolbar"><strong id="image-dialog-title">图表预览</strong><button type="button" class="btn btn-secondary btn-sm" id="btn-close-image">关闭 · Esc</button></div><img id="image-dialog-img" alt="图表放大预览"></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="{{ url_for('static', filename='app.js') }}?v=23"></script>
+  <script src="{{ url_for('static', filename='app.js') }}?v=24"></script>
 </body>
 </html>

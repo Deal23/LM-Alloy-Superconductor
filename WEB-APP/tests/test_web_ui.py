@@ -46,7 +46,7 @@ def test_workspace_renders_without_models(client):
     assert len(parser.ids) == len(set(parser.ids))
     assert {"dash-formula", "btn-dash-predict", "model-notice", "batch-count",
             "theme-toggle", "image-dialog", "sidebar-backdrop", "viz-elements"} <= set(parser.ids)
-    assert parser.scripts == ["/static/app.js?v=23"]
+    assert parser.scripts == ["/static/app.js?v=24"]
 
 
 def test_resources_endpoint(client):

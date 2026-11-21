@@ -383,9 +383,11 @@ function renderSortIndicators() {
     if (th.dataset.sort === state.modelsSort.field) {
       indicator.textContent = state.modelsSort.order === 'asc' ? '▲' : '▼';
       th.classList.add('sort-active');
+      th.setAttribute('aria-sort', state.modelsSort.order === 'asc' ? 'ascending' : 'descending');
     } else {
       indicator.textContent = '';
       th.classList.remove('sort-active');
+      th.removeAttribute('aria-sort');
     }
   });
 }
@@ -417,7 +419,7 @@ function renderModels() {
   const tbody = $('models-body');
   const models = state.models;
   if (!models.length) {
-    tbody.innerHTML = `<tr><td colspan="8" class="empty"><div class="empty-icon">🗂️</div>暂无模型，请先在「训练模型」页训练</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" class="empty">暂无模型，请先在「训练模型」页训练</td></tr>`;
     renderSortIndicators();
     updateBatchBar();
     return;
@@ -1654,6 +1656,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Local models: sorting + batch operations
   $$('#models-table th.sortable').forEach(th => {
     th.addEventListener('click', () => handleSortModels(th.dataset.sort));
+    th.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        handleSortModels(th.dataset.sort);
+      }
+    });
   });
   $('models-select-all')?.addEventListener('change', e => handleSelectAllModels(e.target.checked));
   $('btn-models-clear-selection')?.addEventListener('click', clearModelSelection);
